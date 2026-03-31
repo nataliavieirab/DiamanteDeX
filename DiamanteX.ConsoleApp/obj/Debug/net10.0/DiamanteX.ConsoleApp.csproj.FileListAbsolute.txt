@@ -12,3 +12,4 @@
 /home/natalia/Documents/AcademiaDoProgramador/DiamanteDeX/DiamanteX.ConsoleApp/obj/Debug/net10.0/DiamanteX.ConsoleApp.pdb
 /home/natalia/Documents/AcademiaDoProgramador/DiamanteDeX/DiamanteX.ConsoleApp/obj/Debug/net10.0/DiamanteX.ConsoleApp.genruntimeconfig.cache
 /home/natalia/Documents/AcademiaDoProgramador/DiamanteDeX/DiamanteX.ConsoleApp/obj/Debug/net10.0/ref/DiamanteX.ConsoleApp.dll
+/home/natalia/Documents/AcademiaDoProgramador/DiamanteDeX/DiamanteX.ConsoleApp/obj/Debug/net10.0/DiamanteX.ConsoleApp.sourcelink.json
