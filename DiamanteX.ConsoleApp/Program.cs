@@ -24,6 +24,7 @@ class Program
 
   static void ShowHeader()
   {
+    Console.Clear();
     Console.WriteLine("================================");
     Console.WriteLine("-------- Diamante de X ---------");
     Console.WriteLine("================================");
