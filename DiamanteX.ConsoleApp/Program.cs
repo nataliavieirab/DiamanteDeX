@@ -4,65 +4,82 @@ class Program
 {
   static void Main(string[] args)
   {
-    Console.WriteLine("================================");
-    Console.WriteLine("-------- Diamante de X ---------");
-    Console.WriteLine("================================");
-    Console.WriteLine();
+    ShowHeader();
 
-    Console.Write(">> Digite um número: ");
-    int numero = Convert.ToInt32(Console.ReadLine());
+    int number = ReadNumber();
 
-    Console.WriteLine();
-
-    if (!isImpar(numero))
+    if (!IsOdd(number))
     {
       Console.WriteLine("Você digitou um número par. Tente novamente! ");
       return;
     }
 
-    int qtdDeLinhasSuperior = (numero - 1) / 2;
-    int qtdDeEspaco = (numero - 1) / 2;
-    int qtdX = 1;
+    int upperLines = (number - 1) / 2;
 
-    for (int linha = 1; linha <= qtdDeLinhasSuperior; linha++)
-    {
-      for (int i = 0; i <= qtdDeEspaco; i++)
-        Console.Write(" ");
-
-      for (int j = 1; j <= qtdX; j++)
-        Console.Write("X");
-
-      Console.WriteLine();
-
-      qtdDeEspaco -= 1;
-      qtdX += 2;
-    }
-
-
-    for (int linha = 0; linha <= qtdDeLinhasSuperior; linha++)
-    {
-
-      for (int i = 0; i <= qtdDeEspaco; i++)
-        Console.Write(" ");
-
-      for (int j = 1; j <= qtdX; j++)
-        Console.Write("X");
-
-      Console.WriteLine();
-
-      qtdDeEspaco += 1;
-      qtdX -= 2;
-
-    }
+    PrintUpperPart(upperLines);
+    PrintLowerPart(upperLines);
 
     Console.ReadLine();
-
   }
-  static bool isImpar(int num)
-  {
-    if (num % 2 == 0)
-      return false;
 
-    return true;
+  static void ShowHeader()
+  {
+    Console.WriteLine("================================");
+    Console.WriteLine("-------- Diamante de X ---------");
+    Console.WriteLine("================================");
+    Console.WriteLine();
+  }
+
+  static int ReadNumber()
+  {
+    Console.Write(">> Digite um número: ");
+    int number = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine();
+
+    return number;
+  }
+
+  static void PrintUpperPart(int upperLines)
+  {
+    int spaces = upperLines;
+    int xCount = 1;
+
+    for (int line = 1; line <= upperLines; line++)
+    {
+      PrintLine(spaces, xCount);
+
+      spaces--;
+      xCount += 2;
+    }
+  }
+
+  static void PrintLowerPart(int upperLines)
+  {
+    int spaces = 0;
+    int xCount = upperLines * 2 + 1;
+
+    for (int line = 0; line <= upperLines; line++)
+    {
+      PrintLine(spaces, xCount);
+
+      spaces++;
+      xCount -= 2;
+    }
+  }
+
+  static void PrintLine(int spaces, int xCount)
+  {
+    for (int i = 0; i <= spaces; i++)
+      Console.Write(" ");
+
+    for (int j = 1; j <= xCount; j++)
+      Console.Write("X");
+
+    Console.WriteLine();
+  }
+
+  static bool IsOdd(int number)
+  {
+    return number % 2 != 0;
   }
 }
